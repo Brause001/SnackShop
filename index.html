@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        body {
+            background-image: url('Brause-pulver.png'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+        }
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            color: #4682b4;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4682b4;
+        }
+
+        button {
+            background-color: #4682b4;
+            color: #fff;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: calc(100% - 20px);
+        }
+
+        button:hover {
+            background-color: #3571a8;
+        }
+
+        button:active {
+            background-color: #2a5773;
+        }
+
+        .container {
+            background-color: #f1f1f1;
+            margin-top: 16px;
+            padding: 16px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cancelbtn {
+            background-color: #ccc;
+            color: #333;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .psw a {
+            text-decoration: none;
+            color: #4682b4;
+        }
+        a {
+      text-decoration: none; 
+      color: white; 
+      position: relative; 
+    }
+    a:after {
+      content: ""; 
+      display: block; 
+      position: absolute; 
+      bottom: -2px; 
+      left: 0; 
+      width: 0; 
+      border-bottom: 1px solid white; 
+      transition: width 0.3s ease; 
+    }
+    a:hover:after {
+      width: 100%; 
+    }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            
+            if (e.ctrlKey && (e.key === 'c' || ekey === 'C')) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && (e.key === 'a' || e.key === 'a')) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && (e.key === 'q' || e.key === 'q')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <p><a href="About us.html">About us</a></p>
+        <p><a href="Produkte.html">Prudukte</a></p>
+        <p><a href="Emails.html">Kontakte</a></p>
+        <p><a href="https://classroom.google.com/">Classroom</a></p>
+        <p><a href="https://www.youtube.com/">Youtube</a></p>
+        <p><a href="https://www.eduvidual.at/">Edividual</a></p>
+        
+        
+    </header>
+
+    <img src="Snack shop.png" width="400" height="400">
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        
+        <button type="button" onclick="login()">Login</button>
+
+        <div class="container">
+            <button onclick="window.location.href ='https://www.youtube.com/watch?v=4fMPvE0fnX8';">Cancel</button>
+            <span class="psw">Forgot <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">password?</a></span>
+            <button onclick="window.location.href='Bewertung.html'";>Klicke hier um zu bewerten</button>
+        </div>
+    </form>
+
+    <script>
+        function login() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            var validCredentials = [
+                { email: 'raphael.bauer@kundmanngasse.at', password: 'Episch', redirect: 'Raphi.html' },
+                { email: 'max.jammernegg@kundmanngasse.at', password: 'Mxkl2131', redirect: 'Zugang.html' },
+                { email: 'julia.apostol@kundmanngasse.at', password: 'Julka', redirect: 'Zugang.html' },
+                { email: 'boris.iliev@kundmanngasse.at', password: 'Borisus', redirect: 'Iliev.html' },
+                { email: 'anton.iliev@kundmanngasse.at', password: 'AntonI', redirect: 'Iliev.html' },
+                { email: 'lukas.mann@kundmanngasse.at', password: 'DaddyLuki', redirect: 'Luki.html' },
+                { email: 'niklas.kent@kundmanngasse.at', password: 'Nick', redirect: 'Shop.html' },
+                { email: 'konstantin.bollmann@kundmanngasse.at', password: 'Geniusus', redirect: 'Shop.html' },
+                { email: 'max.jammernegg@gmail.com', password: 'Mxkl2131', redirect: 'Shop.html' }
+            ];
+
+            var validUser = validCredentials.find(cred => cred.email === email && cred.password === password);
+
+            if (validUser) {
+                document.getElementById('loginForm').style.display = 'none';
+                window.location.href = validUser.redirect;
+            } else {
+                alert('Login Daten sind falsch');
+            }
+        }
+    </script>
+</body>
+</html>

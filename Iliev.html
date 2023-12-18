@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Snacks Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        body {
+      background-image: url('brause-pulver.png'); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-attachment: fixed;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #Logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1em;
+        }
+
+        #Logo img {
+            margin-right: 1em;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 2em;
+            justify-content: space-around;
+        }
+
+        article {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        article:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        aside {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            max-height: 100%;
+            width: 300px;
+            text-align: left;
+            overflow-y: auto;
+            transition: right 0.3s;
+        }
+
+        .slide-in {
+            right: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) {
+            section {
+                padding: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+ <link rel="stylesheet" type="text/css" href="styles.css">
+<script src="script.js"></script>
+
+<header>
+    <div id="Logo">
+        <img src="Snack shop.png" alt="School Snacks Store Logo" width="150" height="150">
+        <h1>Willkommen in unserem School Snacks Online-Shop</h1>
+    </div>
+</header>
+
+<section>
+    <header>
+        <h2>Brause</h2>
+        <img src="Drink.png" alt="Zitrone" width="100" height="100">
+    </header>
+    <article>
+        
+        <h2>Zitrone</h2>
+        <img src="brause-pulver.png" alt="Zitrone" width="100" height="100">
+        <p>Preis: 0.50€</p>
+        <button onclick="addToCart('Brause Zitrone', 0.50)">In den Warenkorb</button>
+    </article>
+    <article>
+        <h2>Himbeere</h2>
+        <img src="brause-pulver.png" alt="Zitrone" width="100" height="100">
+        <p>Preis: 0.50€</p>
+        <button onclick="addToCart('Brause Himbeere', 0.50)">In den Warenkorb</button>
+    </article>
+    <article>
+        <h2>Waldmeister</h2>
+        <img src="brause-pulver.png" alt="Zitrone" width="100" height="100">
+        <p>Preis: 0.50€</p>
+        <button onclick="addToCart('Brause Waldmeister', 0.50)">In den Warenkorb</button>
+    </article>
+    <article>
+        <h2>Orange</h2>
+        <img src="brause-pulver.png" alt="Zitrone" width="100" height="100">
+        <p>Preis: 0.50€</p>
+        <button onclick="addToCart('Brause Orange', 0.50)">In den Warenkorb</button>
+    </article>
+</section>
+
+<section>
+    <header>
+        <h2>Mikado</h2>
+        <img src="Mikado.jpg" alt="Zitrone" width="100" height="100">
+    </header>
+    <article>
+        <h2>Weiße Schokolade</h2>
+        <img src="Mikado.jpg" alt="Zitrone" width="100" height="100">
+        <p>Preis: 2.99€</p>
+        <button onclick="addToCart('Mikado Weiße Schokolade', 2.99)">In den Warenkorb</button>
+    </article>
+    <article>
+        <h2>Bittere Schokolade</h2>
+        <img src="Mikado.jpg" alt="Zitrone" width="100" height="100">
+        <p>Preis: 2.99€</p>
+        <button onclick="addToCart('Mikado Bittere Schokolade', 2.99)">In den Warenkorb</button>
+    </article>
+    <article>
+        <h2>Zarte Schokolade</h2>
+        <img src="Mikado.jpg" alt="Zitrone" width="100" height="100">
+        <p>Preis: 2.99€</p>
+        <button onclick="addToCart('Mikado Zarte Schokolade', 2.99)">In den Warenkorb</button>
+    </article>
+    <article>
+        <h2>Original</h2>
+        <img src="Mikado.jpg" alt="Zitrone" width="100" height="100">
+        <p>Preis: 2.99€</p>
+        <button onclick="addToCart('Mikado Original', 2.99)">In den Warenkorb</button>
+    </article>
+</section>
+
+    <section>
+        <header>
+            <h2>Vanille Milch</h2>
+            <img src="Milch.jpg" alt="Zitrone" width="100" height="100">
+        </header>
+       <article>
+        <h2>Vanille Milch Iliev Rabatt</h2>
+        <img src="Milch.jpg" alt="Zitrone" width="100" height="100">
+        <p>Preis: 1.60€</p>
+        <button onclick="addToCart('Vanille Milch', 1.60)">In den Warenkorb</button>
+       </article>
+    </section>
+    <section>
+        <header>
+            <h2>Popcorn</h2>
+            
+        </header>
+       <article>
+        <h2>Karamel Popcorn</h2>
+        
+        <p>Preis: 3.20€</p>
+        <button onclick="addToCart(' Karamel Popcor', 3.50)">In den Warenkorb</button>
+       </article>
+    </section>
+   
+    <aside id="cart" class="slide-in">
+        <h2>Warenkorb </h2>
+        <div id="cart-content"></div>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="clearCart()">Neue Bestellung</button>
+    </aside>
+
+    <script>
+        let shoppingCart = [];
+
+        function addToCart(productName, price) {
+            shoppingCart.push({ name: productName, price: price });
+            updateCartDisplay();
+            showCart();
+            
+        }
+
+        function updateCartDisplay() {
+            const cartContentElement = document.getElementById('cart-content');
+            let cartContent = "<strong>Warenkorb:</strong><br>";
+
+            for (let item of shoppingCart) {
+                cartContent += `<p>${item.name} - ${item.price}€</p>`;
+            }
+
+            cartContent += "<hr>";
+            const totalPrice = shoppingCart.reduce((total, item) => total + item.price, 0);
+            cartContent += `<p><strong>Gesamtpreis:</strong> ${totalPrice.toFixed(2)}€</p>`;
+
+            cartContentElement.innerHTML = cartContent;
+        }
+
+        function showCart() {
+            const cart = document.getElementById('cart');
+            cart.classList.add('slide-in');
+        }
+
+        function checkout() {
+            alert("Vielen Dank für Ihren Einkauf!");
+
+            
+            const orderCode = generateOrderCode();
+
+           
+            const orderDetails = {
+                code: orderCode,
+                items: shoppingCart
+            };
+
+            console.log('Bestellung abgeschlossen:', orderDetails);
+
+            
+            alert(`Ihr Bestellcode lautet: ${orderCode}`);
+
+           
+            shoppingCart = [];
+            updateCartDisplay();
+            hideCart();
+        }
+
+        function clearCart() {
+            shoppingCart = [];
+            updateCartDisplay();
+            hideCart();
+        }
+
+        function hideCart() {
+            const cart = document.getElementById('cart');
+            cart.classList.remove('slide-in');
+        }
+
+        function generateOrderCode() {
+            
+            const characters = 'ABCDEFGHIJKLMNOPQRSTVUWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const codeLength = 8;
+            return Array.from({ length: codeLength }, () => characters[Math.floor(Math.random() * characters.length)]).join('');
+        }
+    </script>
+    <script>
+       
+function checkout() {
+    alert("Vielen Dank für Ihren Einkauf!");
+
+    const orderCode = generateOrderCode();
+
+    const orderDetails = {
+        code: orderCode,
+        items: shoppingCart
+    };
+
+    
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+
+    console.log('Bestellung abgeschlossen:', orderDetails);
+
+    alert(`Ihr Bestellcode lautet: ${orderCode}`);
+
+    shoppingCart = [];
+    updateCartDisplay();
+    hideCart();
+}
+
+
+
+    </script>
+</body>
+</html>

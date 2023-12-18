@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bestellübersicht</title>
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 20px;
+         background-color: #f5f5f5;
+      }
+
+      section {
+         max-width: 600px;
+         margin: 0 auto;
+         background-color: #fff;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+      }
+
+      h2 {
+         color: #333;
+      }
+
+      h3 {
+         color: #555;
+      }
+
+      ul {
+         list-style-type: none;
+         padding: 0;
+      }
+
+      li {
+         margin-bottom: 8px;
+      }
+
+      p {
+         margin-top: 20px;
+         font-weight: bold;
+      }
+
+      button {
+         background-color: #dc3545;
+         color: #fff;
+         border: none;
+         padding: 10px 15px;
+         border-radius: 5px;
+         cursor: pointer;
+      }
+   </style>
+</head>
+<body>
+    <section id="order-details">
+        
+    </section>
+
+    <button onclick="deleteOrder()">Bestellung löschen</button>
+
+    <script>
+        const storedOrderDetails = localStorage.getItem('orderDetails');
+
+        function deleteOrder() {
+            localStorage.removeItem('orderDetails');
+            location.reload(); 
+        }
+
+        if (storedOrderDetails) {
+            const orderDetails = JSON.parse(storedOrderDetails);
+            const orderDetailsSection = document.getElementById('order-details');
+
+            orderDetailsSection.innerHTML = `
+                <h2>Bestellcode: ${orderDetails.code}</h2>
+                <h3>Bestellte Artikel:</h3>
+                <ul>
+                    ${orderDetails.items.map(item => `<li>${item.name} - ${item.price}€</li>`).join('')}
+                </ul>
+                <p>Gesamtpreis: ${orderDetails.items.reduce((total, item) => total + item.price, 0).toFixed(2)}€</p>
+            `;
+        } else {
+            const orderDetailsSection = document.getElementById('order-details');
+            orderDetailsSection.innerHTML = '<p>Keine Bestellung gefunden.</p>';
+        }
+    </script>
+</body>
+</html>
